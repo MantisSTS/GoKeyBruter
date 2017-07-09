@@ -27,15 +27,13 @@ with open(arguments.w) as words:
 					if(arguments.v):
 						print "[*] Trying Realm - "  + r						
 					output = subprocess.check_output([arguments.g, "-r", r, "-p", line])
-					
 					master_password = output.strip()
 					if(master_password == arguments.p.strip()):
-						print "[+] Found the master password! [" + master_password + ":" + realm + "]" 
+						print "[+] Found the master password! [" + master_password + ":" + r + "]" 
 						break
 		else:
 			output = subprocess.check_output([arguments.g, "-r", arguments.r, "-p", line])
 			master_password = output.strip()
-			print "comparing " + master_password + " with " + arguments.p.strip()
 			if(master_password == arguments.p.strip()):
 				print "[+] Found the master password! [" + master_password + ":" + realm + "]" 
 				break
