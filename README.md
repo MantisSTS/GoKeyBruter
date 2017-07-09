@@ -67,3 +67,35 @@
 
 [+] Found the master password! - test
 ```
+
+**Brute Forcing the Realm and Password**
+```
+┌─[Mantis@HackBox] - [~/Tools/GoKeyBruter] - [2017-07-09 06:20:50]
+└─[1] python ~/Tools/GoKeyBruter/GoKeyBuster.py -g ~/GoProgs/bin/gokey -r google.com -p "6n,_Da5WYv" -w /home/Mantis/Tools/SecLists/Passwords/top_shortlist.txt  -v1 --brute-realm 1 --realm-list ./realm-list.txt  
+
+
+[*] Trying Realm - google
+[*] Trying Realm - gmail
+[*] Trying Realm - gmail.com
+[*] Trying Realm - google.com
+[*] Trying Password - password1
+
+[*] Trying Realm - google
+[*] Trying Realm - gmail
+[*] Trying Realm - gmail.com
+[*] Trying Realm - google.com
+[*] Trying Password - test123
+
+[*] Trying Realm - google
+[*] Trying Realm - gmail
+[*] Trying Realm - gmail.com
+[*] Trying Realm - google.com
+[*] Trying Password - test
+
+[*] Trying Realm - google
+[*] Trying Realm - gmail
+[*] Trying Realm - gmail.com
+[*] Trying Realm - google.com
+[+] Found the master password! [6n,_Da5WYv:google.com]
+```
+
