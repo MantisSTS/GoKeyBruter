@@ -1,6 +1,4 @@
-import time
 import threading
-import hashlib
 import subprocess
 import argparse
 
