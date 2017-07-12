@@ -1,15 +1,10 @@
-import time
+;import time
 import threading
 import hashlib
 import subprocess
 import argparse
 
 counter = 0
-
-def check_password(supplied, guessed):
-	if(supplied == guessed):
-		return True
-	return False
 
 def brute_realm(args, password):
 	password = password.strip()
@@ -20,7 +15,7 @@ def brute_realm(args, password):
 				print "[*] Trying  [%s:%s] "  % (r,password,)
 
 			output = run_process(args.g, r, password)
-			if(check_password(output.strip(), args.p) == True):
+			if(output.strip() == args.p):
 				print "[+] Found the master password! [%s:%s]" % (password.strip(), r) 
 				return output
 	return ''
@@ -50,7 +45,7 @@ def generate_table(args, realm):
 			output = brute_realm(args, line[counter].strip())
 		else:
 			output = run_process(args.g, realm, line[counter].strip()).strip()
-			if(check_password(output, args.p) == True):
+			if(output == args.p):
 				master_password	= output
 				print "[+] Found the master password! [%s:%s]" % (output, realm.strip()) 
 				cracked = True
